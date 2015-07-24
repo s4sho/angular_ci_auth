@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Angular + CI + Auth</title>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="css/main.css">-->
+	<link rel="stylesheet" href="../src/resources/css/main.css">
+	
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+	<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="../bower_components/angular-locker/dist/angular-locker.min.js"></script>
+	<script src="../bower_components/angular-animate/angular-animate.js"></script>
+	
+    <script src="js/all.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="app">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" ui-sref="home">Books</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" ui-sref="create">Add book</a></li>
+					<li><a href="#" ui-sref="login">Login</a></li>
+					<li><a href="#" ui-sref="register">Register</a></li>
+					<li><a href="#" ui-sref="users">List of all users</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	
+	<div class="container">
+        <ui-view></ui-view>
+    </div>
+	
+</body>
+</html>

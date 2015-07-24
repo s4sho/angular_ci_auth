@@ -1,0 +1,14 @@
+<h1>List of books</h1>
+<div class="row">
+	<div class="panel-body">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="book in books">
+				<a href="#/edit/{{ book.id }}">{{ book.title }}</a>
+				<div class="pull-right action-buttons">
+					<a href="#/edit/{{ book.id }}">Edit</a>
+					<a ng-click="remove(book.id)">Delete</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

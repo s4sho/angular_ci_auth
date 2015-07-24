@@ -1,0 +1,43 @@
+<h1>Register</h1>
+
+<form role="form" name="registerForm" novalidate>
+
+	<div class="form-group">
+		<label>Username</label>
+		<input type="text" placeholder="Insert your username" ng-model="user.username" name="username" class="form-control" ng-minlength="6" ng-maxlength="15" ng-required="true">
+		<p ng-show="registerForm.username.$error.required && registerForm.username.$dirty">This field is required.</p>
+		<p ng-show="registerForm.username.$error.minlength && registerForm.username.$dirty">Username should have at least 6 characters.</p>
+		<p ng-show="registerForm.username.$error.maxlength && registerForm.username.$dirty">Username shouldn't have more than 15 characters.</p>
+		<!-- Preveriti mora, ali ta username v bazi že obstaja! -->
+	</div>
+
+	<div class="form-group">
+		<label>E-mail*</label>
+		<input type="email" class="form-control" name="email" ng-model="user.email" placeholder="Enter your e-mail" ng-minlength="6" ng-maxlength="50" ng-required="true">
+		<p ng-show="registerForm.email.$error.required && registerForm.email.$dirty">This field is required.</p>
+		<p ng-show="registerForm.email.$error.email && registerForm.email.$dirty">Please write a valid e-mail address.</p>
+		<p ng-show="registerForm.email.$error.minlength && registerForm.email.$dirty">Your e-mail address should have at least 6 characters.</p>
+		<p ng-show="registerForm.email.$error.maxlength && registerForm.email.$dirty">Your e-mail address shouldn't have more than 50 characters.</p>
+		<!-- Preveriti mora, ali ta email v bazi že obstaja! -->
+	</div>
+
+	<div class="form-group">
+		<label>Password</label>
+		<input type="password" placeholder="Insert your password" ng-model="user.password" name="password" class="form-control" ng-minlength="8" ng-maxlength="50" ng-required="true">
+		<p ng-show="registerForm.password.$error.required && registerForm.password.$dirty">This field is required.</p>
+		<p ng-show="registerForm.password.$error.minlength && registerForm.password.$dirty">Your password should have at least 8 characters.</p>
+		<p ng-show="registerForm.password.$error.maxlength && registerForm.password.$dirty">Your password shouldn't have more than 50 characters.</p>
+	</div>
+	
+	<div class="form-group">
+		<label>Repeat password</label>
+		<input type="password" placeholder="Insert your password" ng-model="user.passwordRepeat" name="passwordRepeat" class="form-control" ng-minlength="8" ng-maxlength="50" ng-required="true">
+		<p ng-show="registerForm.passwordRepeat.$error.required && registerForm.passwordRepeat.$dirty">This field is required.</p>
+		<p ng-show="registerForm.passwordRepeat.$error.minlength && registerForm.passwordRepeat.$dirty">Your password should have at least 8 characters.</p>
+		<p ng-show="registerForm.passwordRepeat.$error.maxlength && registerForm.passwordRepeat.$dirty">Your password shouldn't have more than 50 characters.</p>
+		<!-- Password repeat mora biti enak passwordu -->
+	</div>
+
+	<button type="submit" class="btn btn-primary" ng-disabled="registerForm.$invalid" ng-click="submit(user)">Submit</button>
+
+</form>
