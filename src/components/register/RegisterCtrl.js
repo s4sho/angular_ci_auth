@@ -5,6 +5,10 @@ angular.module('app').controller('RegisterCtrl', ['$scope', 'RegisterFactory', f
                 
         RegisterFactory.save({user:$scope.user}).$promise.then(function(data)
 		{
+			if(data.status == "invalid" && data.message.length > 0){
+				alert(data.message);
+				return;
+			}
 			if(data.response)
 			{
 				angular.copy({}, $scope.user);

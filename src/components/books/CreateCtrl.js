@@ -1,4 +1,8 @@
-angular.module('app').controller('CreateCtrl', ['$scope', '$stateParams', 'BooksFactory', function($scope, $stateParams, BooksFactory){
+angular.module('app').controller('CreateCtrl', ['$scope', '$stateParams', 'BooksFactory', '$state', function($scope, $stateParams, BooksFactory, $state){
+	
+	if(localStorage.getItem('booksUser') == null){
+			$state.go('login');
+	}
 	
 	$scope.settings = {
 		pageTitle: "Add book",

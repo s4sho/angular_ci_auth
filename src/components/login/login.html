@@ -4,21 +4,22 @@
 
 	<div class="form-group">
 		<label>Username or E-mail</label>
-		<input type="text" placeholder="Insert your username" ng-model="user.usernameEmail" name="usernameEmail" class="form-control" ng-minlength="6" ng-maxlength="50" ng-required="true">
-		<p ng-show="registerForm.usernameEmail.$error.required && registerForm.usernameEmail.$dirty">This field is required.</p>
-		<p ng-show="registerForm.usernameEmail.$error.minlength && registerForm.usernameEmail.$dirty">Username should have at least 6 characters.</p>
-		<p ng-show="registerForm.usernameEmail.$error.maxlength && registerForm.usernameEmail.$dirty">Username shouldn't have more than 15 characters.</p>
+		<input type="email" placeholder="Insert your username" ng-model="user.email" name="usernameEmail" class="form-control" ng-minlength="6" ng-maxlength="50" ng-required="true">
+		<p ng-show="loginForm.usernameEmail.$error.required && loginForm.usernameEmail.$dirty">This field is required.</p>
+		<p ng-show="loginForm.usernameEmail.$error.minlength && loginForm.usernameEmail.$dirty">Username should have at least 6 characters.</p>
+		<p ng-show="loginForm.usernameEmail.$error.email && loginForm.usernameEmail.$dirty">Please enter a valid email address.</p>
+		<p ng-show="loginForm.usernameEmail.$error.maxlength && loginForm.usernameEmail.$dirty">Username shouldn't have more than 15 characters.</p>
 		<!-- Preveriti mora, ali ta username v bazi že obstaja! -->
 	</div>
 
 	<div class="form-group">
 		<label>Password</label>
 		<input type="password" placeholder="Insert your password" ng-model="user.password" name="password" class="form-control" ng-minlength="8" ng-maxlength="50" ng-required="true">
-		<p ng-show="registerForm.password.$error.required && registerForm.password.$dirty">This field is required.</p>
-		<p ng-show="registerForm.password.$error.minlength && registerForm.password.$dirty">Your password should have at least 8 characters.</p>
-		<p ng-show="registerForm.password.$error.maxlength && registerForm.password.$dirty">Your password shouldn't have more than 50 characters.</p>
+		<p ng-show="loginForm.password.$error.required && loginForm.password.$dirty">This field is required.</p>
+		<p ng-show="loginForm.password.$error.minlength && loginForm.password.$dirty">Your password should have at least 8 characters.</p>
+		<p ng-show="loginForm.password.$error.maxlength && loginForm.password.$dirty">Your password shouldn't have more than 50 characters.</p>
 	</div>
 
-	<button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="submit(user)">Submit</button>
+	<button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="login()">Submit</button>
 
 </form>

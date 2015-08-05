@@ -31,7 +31,7 @@
 	
 	<div class="form-group">
 		<label>Repeat password</label>
-		<input type="password" placeholder="Insert your password" ng-model="user.passwordRepeat" name="passwordRepeat" class="form-control" ng-minlength="8" ng-maxlength="50" ng-required="true">
+		<input type="password" placeholder="Insert your password" ng-model="user.password_conf" name="passwordRepeat" class="form-control" ng-minlength="8" ng-maxlength="50" ng-required="true">
 		<p ng-show="registerForm.passwordRepeat.$error.required && registerForm.passwordRepeat.$dirty">This field is required.</p>
 		<p ng-show="registerForm.passwordRepeat.$error.minlength && registerForm.passwordRepeat.$dirty">Your password should have at least 8 characters.</p>
 		<p ng-show="registerForm.passwordRepeat.$error.maxlength && registerForm.passwordRepeat.$dirty">Your password shouldn't have more than 50 characters.</p>

@@ -1,5 +1,6 @@
 angular.module('app').controller('HomeCtrl', ['$scope', '$state', 'BooksFactory', function($scope, $state, BooksFactory){
 	
+	
 	BooksFactory.get(function(data)
 	{
 		$scope.books = data.response;
@@ -7,6 +8,10 @@ angular.module('app').controller('HomeCtrl', ['$scope', '$state', 'BooksFactory'
 	
 	$scope.remove = function(id)
 	{
+			if(localStorage.getItem('booksUser') == null){
+				$state.go('login');
+				return;
+		}
 		console.log("inside remove function; " + "deleting the book with id=" + id);
 
 		BooksFactory.delete({id:id}).$promise.then(function(data)

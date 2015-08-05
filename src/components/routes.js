@@ -40,7 +40,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 	{
 		url: '/login',
 		templateUrl: 'templates/login.html',
-		//controller: 'LoginCtrl'
+		controller: 'LoginCtrl'
 	});
 	
 	$stateProvider.state('users',
